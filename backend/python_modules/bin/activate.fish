@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/nguyen/work-space/webapp/backend/python_modules"
+set -gx VIRTUAL_ENV "/home/nguyen/work-space/app/backend/python_modules"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
