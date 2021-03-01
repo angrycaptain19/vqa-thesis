@@ -5,7 +5,7 @@ class ImageDisplay extends Component {
   render() {
     return (
       <>
-        <img alt='Test' src={`../asset/img/${this.props.id}.jpg`}/>   
+        <img alt='Test' src={`img/${this.props.id}.jpg`}/>   
       </> 
     )
   }
