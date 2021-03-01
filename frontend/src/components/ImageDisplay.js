@@ -1,11 +1,24 @@
 
 import React, { Component } from 'react';
+import '../asset/css/ImageStyle.css'
 
 class ImageDisplay extends Component {
+    constructor(props)
+    {
+        super()
+        this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick() {
+        //TODO
+    }
   render() {
     return (
       <>
-        <img alt='Test' src={`img/${this.props.id}.jpg`}/>   
+        <img className='image-style' 
+             alt='Test' 
+             src={`img/${this.props.id}.jpg`}
+             onClick={this.handleClick}        
+        /> 
       </> 
     )
   }

@@ -23,8 +23,6 @@ class DemoPage extends Component {
         <div>
             <Header/>
             {/* Thiet ke input load image va cau hoi */}
-            <br/>
-            {this.state.message}
             <ListImage/>
         </div>
         );

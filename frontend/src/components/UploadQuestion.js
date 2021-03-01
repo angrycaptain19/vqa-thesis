@@ -24,10 +24,8 @@ class UploadQuestion extends Component {
         console.log("Upload Successful")
       })
     }
-
   render() {
     return (
-
       <div>
           <div>
               <input type="text" onChange={this.handleChange} />
