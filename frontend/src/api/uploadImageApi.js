@@ -2,12 +2,12 @@ import API_ROUTE from "./apiRoute"
 import axios from 'axios'
 
 
-class UploadApi {
-    static post( payload ) {
+class UploadImageApi {
+    static postImage( payload ) {
         const uri = API_ROUTE + "/upload"
         return axios.post(uri, payload)
     }
 }
 
-export default UploadApi
+export default UploadImageApi
 

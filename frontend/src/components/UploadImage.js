@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import UploadApi from '../api/uploadApi';
+import UploadImageApi from '../api/uploadImageApi';
 import '../asset/css/UploadImage.css'
 import { TITLE } from './constant'
-class Upload extends Component {
+class UploadImage extends Component {
 
     constructor() {
         super()
@@ -15,7 +15,6 @@ class Upload extends Component {
         this.generatePreviewImageUrl = this.generatePreviewImageUrl.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.uploadHandler = this.uploadHandler.bind(this)
-        this.handleValue = this.handleValue.bind(this)
     }
 
     generatePreviewImageUrl(file, callback) {
@@ -26,7 +25,7 @@ class Upload extends Component {
 
     handleChange(event) {
       const file = event.target.files[0]
-      
+  
       if (!file) {
         return
       }
@@ -41,25 +40,15 @@ class Upload extends Component {
         })
     }
 
-
-    handleValue(e) {
-      e.preventdefault()
-      this.setState({
-          value: e.target.value
-      })
-    }
-    
-
     uploadHandler(e) {
-    const formData = new FormData()
-    formData.append('file', this.state.imageFile, 'img.png')
-    formData.append('question', this.state.value)
-    
-    UploadApi.post(formData)
-    .then(function(response, data) {
-            data = response.data;
-            console.log("Upload successful")
-        })
+      const formData = new FormData()
+      formData.append('file', this.state.imageFile, 'img.png')
+      
+      UploadImageApi.postImage(formData)
+      .then(function(response, data) {
+              data = response.data;
+              console.log("Upload successful")
+          })
     }
 
   render() {
@@ -85,9 +74,6 @@ class Upload extends Component {
           </div>
           <br/>
           <div>
-              <input type="text" onChange={this.handleValue} />
-          </div>
-          <div>
               <input type="submit" onClick={this.uploadHandler} />
           </div>
 
@@ -98,4 +84,4 @@ class Upload extends Component {
   }
 }
 
-export default Upload
+export default UploadImage

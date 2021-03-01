@@ -46,5 +46,12 @@ def upload_file():
             
 	return "Successful"
 
+@app.route('/upload-question', methods=['GET', 'POST'])
+def upload_question():
+	if request.method == 'POST':
+		json_data = request.get_json()
+		question = json_data.get('payload')
+	return "Successful"
+
 if __name__ == "__main__":
 	app.run(host = 'localhost',port=5000, debug=True)

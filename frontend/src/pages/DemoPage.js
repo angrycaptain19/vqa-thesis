@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import Header from '../components/Header'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import InitApi from '../api/initApi'
-import UploadQuestion from '../components/UploadQuestion'
-import UploadImage from '../components/UploadImage'
-import UploadImageApi from '../api/uploadImageApi';
-class HomePage extends Component {
+import ListImage from '../components/ListImage'
+
+class DemoPage extends Component {
     state = {
       message: " "
     }
@@ -24,13 +23,12 @@ class HomePage extends Component {
         <div>
             <Header/>
             {/* Thiet ke input load image va cau hoi */}
+            <br/>
             {this.state.message}
-
-            <UploadQuestion/>
-            <UploadImage/>
+            <ListImage/>
         </div>
         );
     }
 }
 
-export default HomePage
+export default DemoPage
